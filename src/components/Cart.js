@@ -1,21 +1,24 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useClickAway } from "react-use";
 import style from "./Cart.module.scss";
 import cart from "../images/icon-cart.svg";
 import cn from "classnames";
 
 const Cart = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const ref = useRef(null);
+  useClickAway(ref, () => {
+    setDropdownOpen(false)
+  })
 
   return (
-    <div className={style.cart}>
+    <div className={style.cart} ref={ref}>
       <a
         href="#"
+        
         className={style.icon}
         onClick={() => {
           setDropdownOpen(current => !current);
-        }}
-        onMouseOver={() => {
-          setDropdownOpen(true);
         }}
       >
         <img src={cart} alt="cart" />
@@ -24,11 +27,7 @@ const Cart = () => {
         className={cn(style.dropdown, {
           [style.dropdown_visible]: dropdownOpen,
         })}
-        onMouseLeave={() => {
-          setTimeout(() => {
-            setDropdownOpen(false);
-          }, 500);
-        }}
+        
       >
         <div className={style.title}>Cart</div>
         <div className={style.info}>Your cart is empty.</div>

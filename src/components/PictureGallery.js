@@ -18,7 +18,7 @@ const PictureGallery = () => {
       <div className={style.item}>
         <img src={currentPicture} alt="" />
         <div
-          className={style.arrowPrevious}
+          className={style.arrowPrevious + " " + style.arrow}
           onClick={() => {
             setItemNumber((current) => current - 1);
           }}
@@ -26,7 +26,7 @@ const PictureGallery = () => {
           <img src={iconPrevious} alt="previous" />
         </div>
         <div
-          className={style.arrowNext}
+          className={style.arrowNext + " " + style.arrow}
           onClick={() => {
             setItemNumber((current) => current + 1);
           }}
