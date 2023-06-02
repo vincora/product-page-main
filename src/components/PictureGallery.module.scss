@@ -1,0 +1,46 @@
+.item{
+    width: 100vw;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+
+    img{
+        position: absolute;
+        top:50%;
+        transform: translateY(-40%);
+        width: 100%;
+
+    }
+}
+.arrowPrevious{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    img{
+        position: absolute;
+        left: 10px;
+        top: 14px;
+        width: 8px;
+    }
+}
+.arrowNext{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    img{
+        position: absolute;
+        right: 10px;
+        top: 14px;
+        width: 8px;
+    }
+}

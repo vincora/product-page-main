@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -14,4 +15,9 @@ code {
 
 .modal-open {
   overflow: hidden;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

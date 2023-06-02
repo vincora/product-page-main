@@ -12,7 +12,7 @@ const Cart = () => {
         href="#"
         className={style.icon}
         onClick={() => {
-          setDropdownOpen(true);
+          setDropdownOpen(current => !current);
         }}
         onMouseOver={() => {
           setDropdownOpen(true);
