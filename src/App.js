@@ -1,17 +1,17 @@
 import style from "./App.module.scss";
 import Header from "./components/Header";
 import PictureGallery from "./components/PictureGallery";
-import ProductInfo from "./components/ProductInfo";
+import Product from "./components/Product";
 
 function App() {
   return (
     <div>
-      <div className={style.container}>
-        <Header></Header>
-      </div>
-      <div className={style.grid}>
-        <PictureGallery></PictureGallery>
-        <ProductInfo></ProductInfo>
+      <Header/>
+      <div className={style.gridWrapper}>
+        <div className={style.grid}>
+          <PictureGallery/>
+          <Product/>
+        </div>
       </div>
     </div>
   );

@@ -14,25 +14,23 @@ const PictureGallery = () => {
   let currentPicture = pictures[Math.abs(itemNumber) % pictures.length];
 
   return (
-    <div>
-      <div className={style.item}>
-        <img src={currentPicture} alt="" />
-        <div
-          className={style.arrowPrevious + " " + style.arrow}
-          onClick={() => {
-            setItemNumber((current) => current - 1);
-          }}
-        >
-          <img src={iconPrevious} alt="previous" />
-        </div>
-        <div
-          className={style.arrowNext + " " + style.arrow}
-          onClick={() => {
-            setItemNumber((current) => current + 1);
-          }}
-        >
-          <img src={iconNext} alt="next" />
-        </div>
+    <div className={style.item}>
+      <img src={currentPicture} alt="" />
+      <div
+        className={style.arrowPrevious + " " + style.arrow}
+        onClick={() => {
+          setItemNumber((current) => current - 1);
+        }}
+      >
+        <img src={iconPrevious} alt="previous" />
+      </div>
+      <div
+        className={style.arrowNext + " " + style.arrow}
+        onClick={() => {
+          setItemNumber((current) => current + 1);
+        }}
+      >
+        <img src={iconNext} alt="next" />
       </div>
     </div>
   );

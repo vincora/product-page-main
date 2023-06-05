@@ -1,16 +1,14 @@
 .item {
   width: 100vw;
-  height: 300px;
+  aspect-ratio: 8 / 7;
   overflow: hidden;
   position: relative;
 
   img {
-    // position: absolute;
-    // top:50%;
-    // transform: translateY(-40%);
     width: 100%;
   }
 }
+
 .arrow {
   position: absolute;
   top: 50%;
@@ -19,6 +17,7 @@
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   background-color: #fff;
+  cursor: pointer;
   img {
     position: absolute;
     top: 50%;
@@ -39,11 +38,22 @@
     transform: translate(-30%, -50%);
   }
 }
-@media (min-width: 400px) {
+@media (min-width: 415px) {
   .item {
-    width: 400px;
-    height: 400px;
+    max-width: 415px;
+    width: 100%;
     margin: 0 auto;
     border-radius: 10px;
+    
+  }
+}
+@media (min-width: 725px) {
+    .item{
+        margin: 0;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+  .arrow {
+    display: none;
   }
 }

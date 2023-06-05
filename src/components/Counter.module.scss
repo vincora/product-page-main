@@ -1,0 +1,19 @@
+.counter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: hsl(223, 64%, 98%);
+    font-weight: 700;
+    width: 100%;
+}
+.button{
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

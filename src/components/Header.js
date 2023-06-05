@@ -9,20 +9,22 @@ import Cart from "./Cart";
 
 const Header = () => {
   return (
-    <header className={style.header}>
-      <div className={style.left}>
-        <Nav></Nav>
-        <a href="#" className={style.logo}>
-          <img src={logo} alt="logo" />
-        </a>
-      </div>
-      <div className={style.right}>
-        <Cart></Cart>
-        <a href="#" className={style.avatar}>
-          <img src={avatar} alt="avatar" />
-        </a>
-      </div>
-    </header>
+    <div className={style.wrapper}>
+      <header className={style.header}>
+        <div className={style.left}>
+          <Nav></Nav>
+          <a href="#" className={style.logo}>
+            <img src={logo} alt="logo" />
+          </a>
+        </div>
+        <div className={style.right}>
+          <Cart></Cart>
+          <a href="#" className={style.avatar}>
+            <img src={avatar} alt="avatar" />
+          </a>
+        </div>
+      </header>
+    </div>
   );
 };
 
