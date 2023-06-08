@@ -3,14 +3,16 @@ import Header from "./components/Header";
 import PictureGallery from "./components/PictureGallery";
 import Product from "./components/Product";
 
+
 function App() {
+
   return (
     <div>
-      <Header/>
+      <Header />
       <div className={style.gridWrapper}>
         <div className={style.grid}>
-          <PictureGallery/>
-          <Product/>
+          <PictureGallery />
+          <Product />
         </div>
       </div>
     </div>

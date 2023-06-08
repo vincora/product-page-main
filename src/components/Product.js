@@ -1,28 +1,33 @@
-import React from "react";
+import { useState } from "react";
 import style from "./Product.module.scss";
-import cart from '../images/icon-cart-light.svg'
+import cart from "../images/icon-cart-light.svg";
 import Counter from "./Counter";
+import { product } from "../ItemInfo.js";
+import { useDispatch } from "react-redux";
 
 const ProductInfo = () => {
+  const [amount, setAmount] = useState(0);
+
+  const dispatch = useDispatch();
+  const addItemsToCart = () => {
+    dispatch({ type: "cart/addItemsToCart", payload: amount});
+  };
+
   return (
     <div className={style.wrapper}>
-      <div className={style.company}>Sneaker Company</div>
-      <div className={style.name}>Fall Limited Edition Sneakers</div>
-      <div className={style.description}>
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they’ll withstand everything the
-        weather can offer.
-      </div>
+      <div className={style.company}>{product.company}</div>
+      <div className={style.name}>{product.name}</div>
+      <div className={style.description}>{product.description}</div>
       <div className={style.price}>
         <div className={style.currentPriceWrapper}>
-          <div className={style.currentPrice}>$125.00</div>
-          <div className={style.discount}>50%</div>
+          <div className={style.currentPrice}>${product.currentPrice}.00</div>
+          <div className={style.discount}>{product.discount}%</div>
         </div>
-        <div className={style.oldPrice}>$250.00</div>
+        <div className={style.oldPrice}>${product.initPrice}.00</div>
       </div>
       <div className={style.actionSection}>
-        <Counter/>
-        <button className={style.button}>
+        <Counter setAmount={setAmount} amount={amount}/>
+        <button className={style.button} onClick={addItemsToCart}>
           <img src={cart} alt="" />
           Add to cart
         </button>

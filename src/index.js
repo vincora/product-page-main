@@ -1,13 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import { product } from "./ItemInfo";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const defaultState = {
+  item: product,
+  amount: 0
+}
+
+const reducer = (state = defaultState, action) => {
+  switch (action.type) {
+    case "cart/addItemsToCart":
+      return { ...state, amount: action.payload };
+    case "cart/removeItemsFromCart":
+      return { ...state, amount: 0 };
+    default:
+      return state;
+  }
+};
+
+let store = createStore(reducer);
+store.subscribe(() => console.log(store.getState()));
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

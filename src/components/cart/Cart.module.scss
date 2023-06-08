@@ -23,13 +23,17 @@
   font-weight: 700;
   border-bottom: 1px solid #ccc;
 }
-.info {
+.empty {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   color: hsl(219, 9%, 45%);
   font-weight: 700;
+}
+.info{
+  padding: 20px;
+  
 }
 .icon {
   display: flex;

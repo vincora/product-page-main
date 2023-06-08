@@ -5,7 +5,7 @@ import logo from "../images/logo.svg";
 
 import avatar from "../images/image-avatar.png";
 import Nav from "./Nav";
-import Cart from "./Cart";
+import Cart from "./cart/Cart";
 
 const Header = () => {
   return (
