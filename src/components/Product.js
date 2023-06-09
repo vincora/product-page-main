@@ -4,13 +4,14 @@ import cart from "../images/icon-cart-light.svg";
 import Counter from "./Counter";
 import { product } from "../ItemInfo.js";
 import { useDispatch } from "react-redux";
+import Button from "./Button";
 
 const ProductInfo = () => {
   const [amount, setAmount] = useState(0);
 
   const dispatch = useDispatch();
   const addItemsToCart = () => {
-    dispatch({ type: "cart/addItemsToCart", payload: amount});
+    dispatch({ type: "cart/addItemsToCart", payload: amount });
   };
 
   return (
@@ -26,11 +27,11 @@ const ProductInfo = () => {
         <div className={style.oldPrice}>${product.initPrice}.00</div>
       </div>
       <div className={style.actionSection}>
-        <Counter setAmount={setAmount} amount={amount}/>
-        <button className={style.button} onClick={addItemsToCart}>
+        <Counter setAmount={setAmount} amount={amount} />
+        <Button onClick={addItemsToCart}>
           <img src={cart} alt="" />
           Add to cart
-        </button>
+        </Button>
       </div>
     </div>
   );

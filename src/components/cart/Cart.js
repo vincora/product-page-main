@@ -1,9 +1,11 @@
 import { useState, useRef } from "react";
 import { useClickAway } from "react-use";
 import style from "./Cart.module.scss";
-import cart from "../../images/icon-cart.svg";
+import iconCart from "../../images/icon-cart.svg";
 import cn from "classnames";
 import { useSelector } from "react-redux";
+import iconDelete from '../../images/icon-delete.svg';
+import Button from "../Button";
 
 const Cart = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -12,7 +14,10 @@ const Cart = () => {
     setDropdownOpen(false);
   });
 
-  const itemsAmount = useSelector((state) => state.amount);
+  const itemAmount = useSelector(state => state.amount);
+  const itemName = useSelector(state => state.item.name);
+  const itemImg = useSelector(state => state.item.img);
+  const itemPrice = useSelector(state => state.item.currentPrice);
 
   return (
     <div className={style.cart} ref={ref}>
@@ -23,7 +28,7 @@ const Cart = () => {
           setDropdownOpen((current) => !current);
         }}
       >
-        <img src={cart} alt="cart" />
+        <img src={iconCart} alt="cart" />
       </a>
       <div
         className={cn(style.dropdown, {
@@ -31,8 +36,18 @@ const Cart = () => {
         })}
       >
         <div className={style.title}>Cart</div>
-        {itemsAmount > 0 ? (
-          <div className={style.info}>{itemsAmount}</div>
+        {itemAmount > 0 ? (
+          <div className={style.con}>
+            <div className={style.info}>
+              <img src={itemImg} alt="" />
+              <div className={style.text}>
+                {itemName}
+                <div>${itemPrice}.00 × {itemAmount} <span className={style.totalPrice}>${itemPrice*itemAmount}.00</span></div>
+              </div>
+              <img src={iconDelete} alt="" />
+            </div>
+            <Button>Checkout</Button>
+          </div>
         ) : (
           <div className={style.empty}>Your cart is empty.</div>
         )}
