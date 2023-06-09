@@ -1,14 +1,12 @@
 .item {
   width: 100vw;
-  aspect-ratio: 8 / 7;
-  overflow: hidden;
   position: relative;
-
   img {
+    aspect-ratio: 8 / 7;
+    overflow: hidden;
     width: 100%;
   }
 }
-
 .arrow {
   position: absolute;
   top: 50%;
@@ -33,27 +31,40 @@
 }
 .arrowNext {
   right: 15px;
-
   img {
     transform: translate(-30%, -50%);
   }
+}
+.thumbnails {
+  display: none;
 }
 @media (min-width: 415px) {
   .item {
     max-width: 415px;
     width: 100%;
     margin: 0 auto;
-    border-radius: 10px;
-    
+    img{
+      border-radius: 10px;
+    }
   }
 }
-@media (min-width: 725px) {
-    .item{
-        margin: 0;
-        width: 100%;
-        aspect-ratio: 1 / 1;
+@media (min-width: 750px) {
+  .item {
+    margin: 0;
+    width: 100%;
+    img {
+      aspect-ratio: 1 / 1;
     }
+  }
   .arrow {
     display: none;
+  }
+  .thumbnails {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    img {
+      border-radius: 5px;
+    }
   }
 }

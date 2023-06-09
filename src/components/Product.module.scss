@@ -1,7 +1,4 @@
-.wrapper{
-    margin: 0 auto;
-    width: 90vw;
-    max-width: 900px;
+.layout{
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -26,7 +23,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 .currentPrice{
     font-weight: 700;
@@ -58,33 +54,16 @@
     gap: 15px;
 }
 .button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 15px;
-    background-color:  hsl(26, 100%, 55%);
-    color: #fff;
-    font-weight: 700;
     border-radius: 10px;
-    border: none;
+    box-shadow: 0 20px 20px hsla(26, 100%, 55%, 0.253);
     width: 100%;
-    cursor: pointer;
-    img{
-        width: 18px;
-    }
 }
 
 @media (min-width: 450px) {
     .actionSection{
         flex-direction: row;
     }
-}
-@media (min-width: 725px) {
-    .wrapper{
-        width: auto;
-    }
-    .actionSection{
-        flex-direction: column;
+    .button{
+        width: 60%;
     }
 }

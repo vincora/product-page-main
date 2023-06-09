@@ -15,7 +15,7 @@ const ProductInfo = () => {
   };
 
   return (
-    <div className={style.wrapper}>
+    <div className={style.layout}>
       <div className={style.company}>{product.company}</div>
       <div className={style.name}>{product.name}</div>
       <div className={style.description}>{product.description}</div>
@@ -28,10 +28,12 @@ const ProductInfo = () => {
       </div>
       <div className={style.actionSection}>
         <Counter setAmount={setAmount} amount={amount} />
-        <Button onClick={addItemsToCart}>
-          <img src={cart} alt="" />
-          Add to cart
-        </Button>
+        <div className={style.button}>
+          <Button onClick={addItemsToCart}>
+            <img src={cart} alt="" />
+            Add to cart
+          </Button>
+        </div>
       </div>
     </div>
   );

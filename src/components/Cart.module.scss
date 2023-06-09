@@ -1,10 +1,9 @@
 .cart {
   position: static;
-
 }
 .dropdown {
   position: absolute;
-  top: 80px;
+  top: 90px;
   left: 10px;
   right: 10px;
   background-color: #ffffff;
@@ -31,10 +30,6 @@
   color: hsl(219, 9%, 45%);
   font-weight: 700;
 }
-.con{
-  padding: 20px;
-
-}
 .info{
   display: flex;
   justify-content: space-between;
@@ -54,8 +49,8 @@
 .icon {
   display: flex;
   align-items: center;
-  width: 22px;
-
+  width: 42px;
+  padding: 10px;
   img {
     width: 100%;
   }

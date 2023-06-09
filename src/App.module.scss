@@ -1,38 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
-*{
-    box-sizing: border-box;
-    font-family: "Kumbh Sans", sans-serif;
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
+* {
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.header {
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 950px;
 }
 
-.grid{
+.grid {
+  display: grid;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+.product{
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 900px;
+}
+
+@media (min-width: 750px) {
+  .grid {
     display: grid;
-    gap: 20px;
-    padding-bottom: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    padding: 60px 40px;
+  }
+  .gridWrapper {
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 900px;
+  }
+  .product{
+    width: auto;
+  }
 }
-
-
-@media (min-width: 725px) {
-    .grid{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        padding: 60px 40px;
-    }
-    .gridWrapper{
-        margin: 0 auto;
-        width: 90vw;
-        max-width: 900px;
-    }
-}
-
-

@@ -17,3 +17,8 @@
     align-items: center;
     justify-content: center;
 }
+@media (min-width: 450px) {
+    .counter{
+        width: 40%;
+    }
+}
