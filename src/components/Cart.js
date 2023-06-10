@@ -3,7 +3,7 @@ import { useClickAway } from "react-use";
 import style from "./Cart.module.scss";
 import iconCart from "../images/icon-cart.svg";
 import cn from "classnames";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import iconDelete from "../images/icon-delete.svg";
 import Button from "./Button";
 
@@ -19,6 +19,12 @@ const Cart = () => {
   const itemImg = useSelector((state) => state.item.img);
   const itemPrice = useSelector((state) => state.item.currentPrice);
 
+  const cartDispatch = useDispatch();
+
+  const removeItemFromCart = () => {
+    cartDispatch({ type: "cart/removeItemFromCart" });
+  };
+
   return (
     <div className={style.cart} ref={ref}>
       <a
@@ -29,6 +35,7 @@ const Cart = () => {
         }}
       >
         <img src={iconCart} alt="cart" />
+        <div className={cn(style.badge, {[style.badge_visible]: itemAmount > 0})}>{itemAmount}</div>
       </a>
       <div
         className={cn(style.dropdown, {
@@ -37,9 +44,9 @@ const Cart = () => {
       >
         <div className={style.title}>Cart</div>
         {itemAmount > 0 ? (
-          <div className={style.con}>
+          <div className={style.body}>
             <div className={style.info}>
-              <img src={itemImg} alt="" />
+              <img src={itemImg} alt="" className={style.thumbnail} />
               <div className={style.text}>
                 {itemName}
                 <div>
@@ -49,7 +56,7 @@ const Cart = () => {
                   </span>
                 </div>
               </div>
-              <img src={iconDelete} alt="" />
+              <img src={iconDelete} alt="" className={style.iconDelete} onClick={removeItemFromCart} />
             </div>
             <Button>Checkout</Button>
           </div>

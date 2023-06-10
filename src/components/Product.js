@@ -10,8 +10,12 @@ const ProductInfo = () => {
   const [amount, setAmount] = useState(0);
 
   const dispatch = useDispatch();
+
   const addItemsToCart = () => {
-    dispatch({ type: "cart/addItemsToCart", payload: amount });
+    dispatch({
+      type: "cart/addItemsToCart",
+      payload: { amount, item: product },
+    });
   };
 
   return (
@@ -28,8 +32,8 @@ const ProductInfo = () => {
       </div>
       <div className={style.actionSection}>
         <Counter setAmount={setAmount} amount={amount} />
-        <div className={style.button}>
-          <Button onClick={addItemsToCart}>
+        <div className={style.button} onClick={addItemsToCart}>
+          <Button onClick={addItemsToCart} shadow>
             <img src={cart} alt="" />
             Add to cart
           </Button>

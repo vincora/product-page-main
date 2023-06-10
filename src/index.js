@@ -5,18 +5,17 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import { product } from "./ItemInfo";
 
 const defaultState = {
-  item: product,
+  item: {},
   amount: 0
 }
 
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "cart/addItemsToCart":
-      return { ...state, amount: action.payload };
-    case "cart/removeItemsFromCart":
+      return { ...state, amount: action.payload.amount, item: action.payload.item };
+    case "cart/removeItemFromCart":
       return { ...state, amount: 0 };
     default:
       return state;
@@ -24,7 +23,6 @@ const reducer = (state = defaultState, action) => {
 };
 
 let store = createStore(reducer);
-store.subscribe(() => console.log(store.getState()));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

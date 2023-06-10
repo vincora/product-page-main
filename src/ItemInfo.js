@@ -8,5 +8,5 @@ export const product = {
     initPrice: 250,
     discount: 50,
     currentPrice: 125,
-    img: '/Users/juliaglagola/Documents/2023/2023-05-27/src/images/image-product-1-thumbnail.jpg'
+    img: '/images/image-product-1-thumbnail.jpg'
 }

@@ -43,7 +43,7 @@
     }
   }
 
-@media (min-width: 725px) {
+@media (min-width: 750px) {
     .bodyWrapper {
       display: block;
       position: static;
@@ -76,7 +76,7 @@
           &::after{
             position: absolute;
             content: "";
-            bottom: -40px;
+            bottom: -30px;
             left: 0;
             right: 0;
             width: 100%;
