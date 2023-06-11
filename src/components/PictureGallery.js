@@ -43,6 +43,7 @@ const PictureGallery = () => {
           return (
             <img
               src={item}
+              key={number}
               className={cn(style.thumbPicture, {
                 [style.thumbActive]: itemNumber === number,
               })}
