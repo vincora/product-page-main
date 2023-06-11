@@ -6,6 +6,7 @@
     border-radius: 10px;
     background-color: hsl(223, 64%, 98%);
     font-weight: 700;
+    min-width: 120px;
     width: 100%;
 }
 .button{
@@ -16,6 +17,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    &:hover{
+        filter: opacity(50%);
+    }
 }
 @media (min-width: 450px) {
     .counter{

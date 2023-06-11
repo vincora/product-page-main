@@ -32,12 +32,10 @@ const ProductInfo = () => {
       </div>
       <div className={style.actionSection}>
         <Counter setAmount={setAmount} amount={amount} />
-        <div className={style.button} onClick={addItemsToCart}>
-          <Button onClick={addItemsToCart} shadow>
-            <img src={cart} alt="" />
-            Add to cart
-          </Button>
-        </div>
+        <Button onClick={addItemsToCart} shadow >
+          <img src={cart} alt="" />
+          Add to cart
+        </Button>
       </div>
     </div>
   );

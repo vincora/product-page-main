@@ -36,14 +36,28 @@
   }
 }
 .thumbnails {
+  margin-top: 20px;
+  gap: 20px;
   display: none;
+}
+.thumbPicture {
+  border-radius: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  &:hover {
+    filter: opacity(50%);
+  }
+}
+.thumbActive{
+  filter: opacity(50%);
+  border: 2px solid hsl(26, 100%, 55%);
 }
 @media (min-width: 415px) {
   .item {
     max-width: 415px;
     width: 100%;
     margin: 0 auto;
-    img{
+    img {
       border-radius: 10px;
     }
   }
@@ -61,10 +75,5 @@
   }
   .thumbnails {
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
-    img {
-      border-radius: 5px;
-    }
   }
 }
