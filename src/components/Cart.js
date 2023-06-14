@@ -58,7 +58,7 @@ const Cart = () => {
               </div>
               <img src={iconDelete} alt="" className={style.iconDelete} onClick={removeItemFromCart} />
             </div>
-            <Button>Checkout</Button>
+            <Button onClick={() => setDropdownOpen(false)}>Checkout</Button>
           </div>
         ) : (
           <div className={style.empty}>Your cart is empty.</div>

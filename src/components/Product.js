@@ -16,6 +16,7 @@ const ProductInfo = () => {
       type: "cart/addItemsToCart",
       payload: { amount, item: product },
     });
+    setAmount(0);
   };
 
   return (

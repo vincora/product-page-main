@@ -11,7 +11,9 @@ function App() {
       </div>
       <div className={style.gridWrapper}>
         <div className={style.grid}>
-          <PictureGallery />
+          <div className={style.gallery}>
+            <PictureGallery />
+          </div>
           <div className={style.product}>
             <Product />
           </div>

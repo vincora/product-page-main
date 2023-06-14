@@ -20,37 +20,40 @@ const PictureGallery = () => {
   let currentPicture = pictures[Math.abs(itemNumber) % pictures.length];
 
   return (
-    <div className={style.item}>
-      <img src={currentPicture} alt="" />
-      <div
-        className={style.arrowPrevious + " " + style.arrow}
-        onClick={() => {
-          setItemNumber((current) => current - 1);
-        }}
-      >
-        <img src={iconPrevious} alt="previous" />
-      </div>
-      <div
-        className={style.arrowNext + " " + style.arrow}
-        onClick={() => {
-          setItemNumber((current) => current + 1);
-        }}
-      >
-        <img src={iconNext} alt="next" />
+    <div className={style.layout}>
+      <div className={style.currentPicWrapper}>
+        <img src={currentPicture} className={style.currentPic} />
+        <div
+          className={cn(style.arrow, style.arrowPrevious)}
+          onClick={() => {
+            setItemNumber((current) => current - 1);
+          }}
+        >
+          <img src={iconPrevious} alt="previous" />
+        </div>
+        <div
+          className={cn(style.arrow, style.arrowNext)}
+          onClick={() => {
+            setItemNumber((current) => current + 1);
+          }}
+        >
+          <img src={iconNext} alt="next" />
+        </div>
       </div>
       <div className={style.thumbnails}>
         {picThumbs.map((item, number) => {
           return (
-            <img
-              src={item}
+            <div
               key={number}
-              className={cn(style.thumbPicture, {
-                [style.thumbActive]: itemNumber === number,
+              className={cn(style.thumbPic, {
+                [style.thumbPic_active]: Math.abs(itemNumber) % picThumbs.length === number,
               })}
               onClick={() => {
                 setItemNumber(number);
               }}
-            />
+            >
+              <img src={item} alt="" />
+            </div>
           );
         })}
       </div>

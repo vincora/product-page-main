@@ -12,11 +12,14 @@
     text-decoration: none;
     color: inherit;
   }
+  img{
+    width: 100%;
+  }
 }
 .header {
-    margin: 0 auto;
-    width: 90vw;
-    max-width: 950px;
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 950px;
 }
 
 .grid {
@@ -24,25 +27,29 @@
   gap: 20px;
   padding-bottom: 40px;
 }
-.product{
-    margin: 0 auto;
-    width: 90vw;
-    max-width: 900px;
+.product {
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 900px;
 }
 
 @media (min-width: 750px) {
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 60px 40px;
+    gap: 60px;
   }
   .gridWrapper {
-    margin: 0 auto;
     width: 90vw;
     max-width: 900px;
+    margin: 0 auto;
+  }
+  .gallery{
   }
   .product{
-    width: auto;
+    align-self: center;
+    max-width: none;
+    width: 100%;
   }
 }

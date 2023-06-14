@@ -1,11 +1,12 @@
-.item {
-  width: 100vw;
+.currentPicWrapper {
   position: relative;
-  img {
-    aspect-ratio: 8 / 7;
-    overflow: hidden;
-    width: 100%;
-  }
+}
+.currentPic {
+  width: 100%;
+  aspect-ratio: 8 / 7;
+  object-fit: cover;
+  object-position: center;
+
 }
 .arrow {
   position: absolute;
@@ -20,7 +21,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 8px;
+    width: 10px;
   }
 }
 .arrowPrevious {
@@ -32,48 +33,78 @@
 .arrowNext {
   right: 15px;
   img {
-    transform: translate(-30%, -50%);
+    transform: translate(-40%, -50%);
   }
 }
 .thumbnails {
-  margin-top: 20px;
-  gap: 20px;
   display: none;
 }
-.thumbPicture {
-  border-radius: 5px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  &:hover {
-    filter: opacity(50%);
-  }
-}
-.thumbActive{
-  filter: opacity(50%);
-  border: 2px solid hsl(26, 100%, 55%);
-}
-@media (min-width: 415px) {
-  .item {
-    max-width: 415px;
-    width: 100%;
-    margin: 0 auto;
-    img {
-      border-radius: 10px;
-    }
-  }
-}
-@media (min-width: 750px) {
-  .item {
-    margin: 0;
-    width: 100%;
-    img {
-      aspect-ratio: 1 / 1;
-    }
-  }
+
+@media (min-width: 450px) {
   .arrow {
     display: none;
   }
-  .thumbnails {
+  .layout {
+    max-width: 90%;
+    max-height: 50vh;
+    margin: 0 auto;
     display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .currentPicWrapper {
+    max-width: 50vh;
+    flex-shrink: 0;
+  }
+  .currentPic {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .thumbnails {
+    display: block;
+    flex-shrink: 0;
+    overflow: scroll;
+  }
+  .thumbPic {
+    max-width: 75px;
+    margin-bottom: 10px;
+    img {
+      border-radius: 10px;
+      border: 2px solid transparent;
+    }
+  }
+  .thumbPic_active {
+    img {
+      filter: opacity(50%);
+      border: 2px solid hsl(26, 100%, 55%);
+    }
   }
 }
+
+@media (min-width: 750px) {
+  .layout{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+    margin: 0;
+  }
+  .currentPicWrapper{
+    max-width: none;
+  }
+  .thumbnails{
+    display: flex;
+    gap: 20px;
+    overflow: auto;
+  }
+  .thumbPic{
+    margin-bottom: 0;
+    max-width: none;
+    img{
+      width: 80px;
+    }
+  }
+}
+
