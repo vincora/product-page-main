@@ -8,7 +8,8 @@ import { Provider } from "react-redux";
 
 const defaultState = {
   item: {},
-  amount: 0
+  amount: 0,
+  modalOpen: false,
 }
 
 const reducer = (state = defaultState, action) => {
@@ -17,6 +18,10 @@ const reducer = (state = defaultState, action) => {
       return { ...state, amount: action.payload.amount, item: action.payload.item };
     case "cart/removeItemFromCart":
       return { ...state, amount: 0 };
+    case "modal/setOpen":
+      return {...state, modalOpen: true};
+    case "modal/setClose":
+      return {...state, modalOpen: false};
     default:
       return state;
   }

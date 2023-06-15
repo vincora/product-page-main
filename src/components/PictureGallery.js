@@ -11,6 +11,7 @@ import iconPrevious from "../images/icon-previous.svg";
 import iconNext from "../images/icon-next.svg";
 import style from "./PictureGallery.module.scss";
 import cn from "classnames";
+import { useDispatch } from "react-redux";
 
 const PictureGallery = () => {
   const [itemNumber, setItemNumber] = useState(0);
@@ -19,10 +20,15 @@ const PictureGallery = () => {
   const picThumbs = [thumb1, thumb2, thumb3, thumb4];
   let currentPicture = pictures[Math.abs(itemNumber) % pictures.length];
 
+  const modalDispatch = useDispatch();
+  const openModal = () => {
+    modalDispatch({type: "modal/setOpen"})
+  };
+
   return (
-    <div className={style.layout}>
+    <div className={style.layout} >
       <div className={style.currentPicWrapper}>
-        <img src={currentPicture} className={style.currentPic} />
+        <img src={currentPicture} className={style.currentPic} onClick={openModal}/>
         <div
           className={cn(style.arrow, style.arrowPrevious)}
           onClick={() => {

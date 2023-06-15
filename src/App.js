@@ -1,4 +1,5 @@
 import style from "./App.module.scss";
+import GalleryModal from "./components/GalleryModal";
 import Header from "./components/Header";
 import PictureGallery from "./components/PictureGallery";
 import Product from "./components/Product";
@@ -19,6 +20,7 @@ function App() {
           </div>
         </div>
       </div>
+      <GalleryModal />
     </div>
   );
 }
