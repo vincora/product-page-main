@@ -43,24 +43,27 @@
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
-  img {
+  svg {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 10px;
   }
-  &:hover {
+  &:hover{
+    svg path{
+      stroke: hsl(26, 100%, 55%);
+    }
   }
+
 }
 .arrowPrevious {
   left: -20px;
-  img {
-    transform: translate(-60%, -50%);
+  svg {
+    transform: translate(-70%, -50%);
   }
 }
 .arrowNext {
   right: -20px;
-  img {
+  svg {
     transform: translate(-40%, -50%);
   }
 }
@@ -102,5 +105,18 @@
     right: 0;
     bottom: 0;
     top: 0;
+  }
+}
+.iconClose{
+  position: absolute;
+  right: 0;
+  top: -40px;
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+  &:hover{
+    svg path{
+      fill: hsl(26, 100%, 55%);
+    }
   }
 }
