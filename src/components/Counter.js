@@ -1,4 +1,3 @@
-import { useState } from "react";
 import style from "./Counter.module.scss";
 import minus from "../images/icon-minus.svg";
 import plus from "../images/icon-plus.svg";
