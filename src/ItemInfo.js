@@ -17,5 +17,6 @@ export const product = {
     discount: 50,
     currentPrice: 125,
     images: [img1, img2, img3, img4],
-    thumbnails: [thumb1, thumb2, thumb3, thumb4]
+    thumbnails: [thumb1, thumb2, thumb3, thumb4],
+    cartPic: img1,
 }
