@@ -16,7 +16,7 @@ const Cart = () => {
 
   const itemAmount = useSelector((state) => state.amount);
   const itemName = useSelector((state) => state.item.name);
-  const itemImg = useSelector((state) => state.item.images[0]);
+  const itemImg = useSelector((state) => state.item.images?.[0]);
   const itemPrice = useSelector((state) => state.item.currentPrice);
 
   const cartDispatch = useDispatch();
