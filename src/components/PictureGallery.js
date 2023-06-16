@@ -4,6 +4,7 @@ import iconNext from "../images/icon-next.svg";
 import style from "./PictureGallery.module.scss";
 import cn from "classnames";
 import { useDispatch } from "react-redux";
+import { useMedia } from "react-use";
 import { product } from "../ItemInfo.js";
 
 const PictureGallery = () => {
@@ -13,9 +14,13 @@ const PictureGallery = () => {
   const picThumbs = product.thumbnails;
   let currentPicture = pictures[itemNumber % pictures.length];
 
+  const isWide = useMedia("(min-width:750px)");
+
   const modalDispatch = useDispatch();
   const openModal = () => {
-    modalDispatch({ type: "modal/setOpen" });
+    if (isWide) {
+      modalDispatch({ type: "modal/setOpen" });
+    }
   };
 
   return (

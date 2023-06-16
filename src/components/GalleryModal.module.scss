@@ -1,108 +1,106 @@
-@media (min-width: 750px) {
-  .background {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #000000bc;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    &_visible{
-      display: flex;
-    }
-  }
-  .layout {
-    position: relative;
-    top: 30px;
+.background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000bc;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  &_visible {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-height: 80vh;
-    height: 100%;
   }
-  .currentPicWrapper {
-    position: relative;
-    height: 80%;
-  }
-  .currentPic {
-    height: 100%;
-    width: auto;
-    border-radius: 10px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: center;
-  }
-  .arrow {
+}
+.layout {
+  position: relative;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-height: 80vh;
+  height: 100%;
+}
+.currentPicWrapper {
+  position: relative;
+  height: 80%;
+}
+.currentPic {
+  height: 100%;
+  width: auto;
+  border-radius: 10px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  img {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    background-color: #fff;
-    cursor: pointer;
-    img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 10px;
-    }
-    &:hover{
-    }
+    left: 50%;
+    width: 10px;
   }
-  .arrowPrevious {
-    left: -20px;
-    img {
-      transform: translate(-60%, -50%);
-    }
+  &:hover {
   }
-  .arrowNext {
-    right: -20px;
-    img {
-      transform: translate(-40%, -50%);
-    }
+}
+.arrowPrevious {
+  left: -20px;
+  img {
+    transform: translate(-60%, -50%);
   }
-  .thumbnails {
-    display: flex;
-    gap: 20px;
-    max-width: 64vh;
-    overflow: scroll;
-    overflow-y: hidden;
+}
+.arrowNext {
+  right: -20px;
+  img {
+    transform: translate(-40%, -50%);
   }
-  .thumbPic {
+}
+.thumbnails {
+  display: flex;
+  gap: 20px;
+  max-width: 64vh;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+.thumbPic {
+  width: 75px;
+  height: 75px;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  img {
     width: 75px;
     height: 75px;
-    background-color: #fff;
     border-radius: 10px;
-    cursor: pointer;
-    img {
-      width: 75px;
-      height: 75px;
-      border-radius: 10px;
-      object-fit: cover;
-      object-position: center;
-      &:hover {
-        filter: opacity(50%);
-      }
-    }
-  }
-  .thumbPic_active {
-    position: relative;
-    img {
+    object-fit: cover;
+    object-position: center;
+    &:hover {
       filter: opacity(50%);
     }
-    &::after{
-      content: "";
-      position: absolute;
-      border: 2px solid hsl(26, 100%, 55%);
-      border-radius: 10px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-    }
+  }
+}
+.thumbPic_active {
+  position: relative;
+  img {
+    filter: opacity(50%);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    border: 2px solid hsl(26, 100%, 55%);
+    border-radius: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
   }
 }
