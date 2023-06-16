@@ -8,7 +8,6 @@ import Button from "./Button";
 
 const ProductInfo = () => {
   const [amount, setAmount] = useState(0);
-
   const dispatch = useDispatch();
 
   const addItemsToCart = () => {
